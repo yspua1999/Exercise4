@@ -24,11 +24,9 @@ class MainActivity : AppCompatActivity() {
     fun processDatePickerResult(year: Int, month: Int, day: Int) {
         val c = Calendar.getInstance()
         val calYear = c.get(Calendar.YEAR)
-        val month_string = Integer.toString(month + 1)
-        val day_string = Integer.toString(day)
-        val year_string = Integer.toString(year)
-        val dateMessage = month_string +
-                "/" + day_string + "/" + year_string
+        val monthString = (month + 1).toString()
+        val dateMessage = monthString  +
+                "/" + day.toString() + "/" + year.toString()
         val age = calYear - year
 
         DoB.text = "DOB : " + dateMessage
@@ -45,7 +43,5 @@ class MainActivity : AppCompatActivity() {
             in 51..55 -> Allowance.text = "Minimum basic savings : "  + "RM 228000"+"\n\n Maximum amount in excess : RM " + String.format("%.0f",228000*0.30)
             else -> Allowance.text = "Do not reach the minimum age or over age"
         }
-
-
     }
 }
